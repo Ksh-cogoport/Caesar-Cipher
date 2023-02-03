@@ -1,8 +1,8 @@
 
 def substrings(string, dict)
     dict.reduce(Hash.new(0)) do |result, word|
-        if string.scan(word).length>0
-            result[word]=string.scan(word).length
+        if string.downcase.scan(word.downcase).length>0
+            result[word.downcase]=string.downcase.scan(word.downcase).length
         end
         result
     end
